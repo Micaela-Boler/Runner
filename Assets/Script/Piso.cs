@@ -7,7 +7,7 @@ public class Piso : MonoBehaviour
 {
     public float offsetX = 99.8f;
     public float floorPosition = 26.2404f;
-    public float floorSpeed = 5;
+    public float floorSpeed = 7;
 
 
     void Update()

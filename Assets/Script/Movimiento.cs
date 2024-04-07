@@ -11,35 +11,45 @@ public class Movimiento : MonoBehaviour
     private Rigidbody _rb;
     bool saltando;
 
+    Animator animator;
+    AudioSource audio;
 
-    [Header("Movimiento vertical y horizontal")]
+
+    [Header("Movimiento horizontal")]
 
     private float horizontal;
     private Vector3 movimiento;
     [SerializeField] int speed;
 
-    Animator animator;
+
+    [Header("Power up escudo")]
+
     public Manager manager;
+    public PowerUpEscudo escudo;
+
+
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
 
 
     void Update()
     {
+        // Movimiento horizontal
+
         horizontal = Input.GetAxis("Horizontal");
         movimiento = new Vector3(horizontal, 0f, 0);
-
-        movimiento.Normalize();
 
         transform.Translate(movimiento * speed * Time.deltaTime);
 
 
-        //Salto
+        // Salto
 
         if (saltando && Input.GetButtonDown("Jump"))
         {
@@ -47,6 +57,7 @@ public class Movimiento : MonoBehaviour
             saltando = false;
 
             animator.SetBool("animacionSaltar", true);
+            audio.Play();
         }
     }
 
@@ -59,9 +70,15 @@ public class Movimiento : MonoBehaviour
             saltando = true;
             animator.SetBool("animacionSaltar", false);
         }
+    }
 
 
-        if (collision.gameObject.CompareTag("Enemigo"))
+    // Activar pantalla de Game Over
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Enemigo") && escudo.activarEscudo == false)
             manager.ActivarPantalla();
     }
 }

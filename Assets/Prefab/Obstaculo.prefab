@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3558983455617606389}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.934, y: 0.638, z: 87.89769}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.3811603, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc99f07563d43544a935ebf0a8893f22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fa913ca292f0e47832065375fbb3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rapidez: 5
-  tiempoMax: 10
+  rapidez: 6
+  tiempoMax: 20
   tiempoActual: 0
 --- !u!54 &-1936592441176808610
 Rigidbody:

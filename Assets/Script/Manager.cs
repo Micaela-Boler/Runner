@@ -8,10 +8,13 @@ public class Manager : MonoBehaviour
     public Puntaje puntosScript;
     [SerializeField] TextMeshProUGUI puntajeFinal;
 
+
+
     void Start()
     {
         gameObject.SetActive(false);
     }
+
 
 
     public void ActivarPantalla()
@@ -25,13 +28,8 @@ public class Manager : MonoBehaviour
     public void Reset()
     {
         SceneManager.LoadScene(0);
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
     }
 
 
- 
-    private void OnCollisionEnter(Collision collision)
-    {
-       
-    }
 }
