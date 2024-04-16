@@ -78,7 +78,11 @@ public class Movimiento : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Enemigo") && escudo.activarEscudo == false)
-            manager.ActivarPantalla();
+        if (other.gameObject.CompareTag("Enemigo"))
+        {
+            if (escudo.activarEscudo == false)
+                manager.ActivarPantalla();
+            else Destroy(other.gameObject);
+        }
     }
 }

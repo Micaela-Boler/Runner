@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17fa913ca292f0e47832065375fbb3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rapidez: 6
+  rapidez: 7
   tiempoMax: 20
   tiempoActual: 0
 --- !u!54 &-1936592441176808610
